@@ -1,0 +1,34 @@
+/* YouTube Shorts Limiter - Content Script Styles */
+
+/* Apply to both full and mini sidebar Shorts entries */
+ytd-guide-entry-renderer.shorts-chained,
+ytd-mini-guide-entry-renderer.shorts-chained {
+  position: relative;
+  opacity: 0.75;
+  cursor: not-allowed !important;
+}
+
+/* Disable click interactions on the anchor */
+ytd-guide-entry-renderer.shorts-chained a,
+ytd-mini-guide-entry-renderer.shorts-chained a {
+  pointer-events: none;
+}
+
+/* Chain overlay styling */
+.shorts-chain-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.shorts-chain-overlay svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
