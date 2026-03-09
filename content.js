@@ -39,11 +39,18 @@ function applyChain() {
       const overlayDiv = document.createElement('div');
       overlayDiv.className = 'shorts-chain-overlay';
 
-      // Set chains.svg as repeating background
+      // Set chains.svg as stretched background
       const chainsSvgUrl = chrome.runtime.getURL('chains.svg');
       overlayDiv.style.backgroundImage = `url('${chainsSvgUrl}')`;
 
       renderer.appendChild(overlayDiv);
+
+      // Create and inject the mirrored chain overlay
+      const overlayDivMirrored = document.createElement('div');
+      overlayDivMirrored.className = 'shorts-chain-overlay shorts-chain-overlay-mirrored';
+      overlayDivMirrored.style.backgroundImage = `url('${chainsSvgUrl}')`;
+
+      renderer.appendChild(overlayDivMirrored);
 
       // Add click interceptor as defensive measure
       const clickHandler = (e) => {
