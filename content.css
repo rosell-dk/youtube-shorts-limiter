@@ -25,10 +25,15 @@ ytd-mini-guide-entry-renderer.shorts-chained a {
   z-index: 9999;
   border-radius: inherit;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.shorts-chain-overlay svg {
+.shorts-chain-overlay img {
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  opacity: 0.8;
 }

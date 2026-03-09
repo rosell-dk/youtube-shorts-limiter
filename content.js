@@ -25,6 +25,7 @@ function applyChain() {
 
   selectors.forEach(selector => {
     const elements = document.querySelectorAll(selector);
+
     elements.forEach(renderer => {
       // Skip if already processed
       if (renderer.classList.contains('shorts-chained')) {
@@ -44,27 +45,12 @@ function applyChain() {
       const overlayDiv = document.createElement('div');
       overlayDiv.className = 'shorts-chain-overlay';
 
-      // Inline SVG with repeating chain link pattern
-      overlayDiv.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-          <defs>
-            <pattern id="chain-pattern-${Math.random()}" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-              <!-- Left link: tilted -40 degrees -->
-              <ellipse cx="9" cy="14" rx="7" ry="4"
-                       transform="rotate(-40 9 14)"
-                       stroke="#b8860b" stroke-width="2.5"
-                       fill="none" opacity="0.85"/>
-              <!-- Right link: tilted +40 degrees, interlocked -->
-              <ellipse cx="19" cy="14" rx="7" ry="4"
-                       transform="rotate(40 19 14)"
-                       stroke="#8b6914" stroke-width="2.5"
-                       fill="none" opacity="0.85"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#chain-pattern-${Math.random()})"/>
-        </svg>
-      `;
+      // Create img element with chains.svg
+      const chainImg = document.createElement('img');
+      chainImg.src = chrome.runtime.getURL('chains.svg');
+      chainImg.alt = 'Locked';
 
+      overlayDiv.appendChild(chainImg);
       renderer.appendChild(overlayDiv);
 
       // Add click interceptor as defensive measure

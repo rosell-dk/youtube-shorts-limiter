@@ -6,6 +6,12 @@
   "icons": {
     "128": "icons/icon128.png"
   },
+  "web_accessible_resources": [
+    {
+      "resources": ["chains.svg"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ],
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/*"],
