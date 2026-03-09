@@ -39,12 +39,10 @@ function applyChain() {
       const overlayDiv = document.createElement('div');
       overlayDiv.className = 'shorts-chain-overlay';
 
-      // Create img element with chains.svg
-      const chainImg = document.createElement('img');
-      chainImg.src = chrome.runtime.getURL('chains.svg');
-      chainImg.alt = 'Locked';
+      // Set chains.svg as repeating background
+      const chainsSvgUrl = chrome.runtime.getURL('chains.svg');
+      overlayDiv.style.backgroundImage = `url('${chainsSvgUrl}')`;
 
-      overlayDiv.appendChild(chainImg);
       renderer.appendChild(overlayDiv);
 
       // Add click interceptor as defensive measure
