@@ -1,6 +1,6 @@
 # Chrome plugin for limiting shorts on youtube.com
 
-This tiny plugin was requested by my son, who wanted to prevent himself from doom-scrolling on youtube.
+This tiny plugin was requested by my son, who wanted to prevent himself from doom-scrolling youtube shorts.
 
 He still wanted to be allowed to click on a short from the homepage. But he did not want to be able to go doom-scrolling from there.
 
