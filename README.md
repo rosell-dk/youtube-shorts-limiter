@@ -18,5 +18,6 @@ This is what it does:
 To install on Opera:
 1. Download
 2. Navigate to opera://extensions
+3. Enable developer mode (if not already enabled)
 3. Click "Load unpacked" and select the folder of the plugin
 

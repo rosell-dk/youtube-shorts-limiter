@@ -2,13 +2,12 @@
   "manifest_version": 3,
   "name": "YouTube Shorts Limiter",
   "version": "1.0.0",
-  "description": "Chains the YouTube Shorts sidebar link so it stays visible but is non-clickable.",
+  "description": "Prevents doom-scrolling youtube shorts, while allowing to view a single short",
   "icons": {
-    "128": "icons/icon128.png"
   },
   "web_accessible_resources": [
     {
-      "resources": ["chains.svg"],
+      "resources": [],
       "matches": ["https://www.youtube.com/*"]
     }
   ],
