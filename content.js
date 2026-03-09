@@ -35,15 +35,22 @@ function applyChain() {
         existingOverlay.remove();
       }
 
-      // Create and inject the chain overlay
+      // Create and inject the lock emoji overlay
       const overlayDiv = document.createElement('div');
       overlayDiv.className = 'shorts-chain-overlay';
 
+      // Add lock emoji
+      const lockEmoji = document.createElement('span');
+      lockEmoji.textContent = '🔒';
+      lockEmoji.className = 'lock-emoji';
+
+      overlayDiv.appendChild(lockEmoji);
+      renderer.appendChild(overlayDiv);
+
+      /* Commented out: Original chain SVG approach
       // Set chains.svg as stretched background
       const chainsSvgUrl = chrome.runtime.getURL('chains.svg');
       overlayDiv.style.backgroundImage = `url('${chainsSvgUrl}')`;
-
-      renderer.appendChild(overlayDiv);
 
       // Create and inject the mirrored chain overlay
       const overlayDivMirrored = document.createElement('div');
@@ -51,6 +58,7 @@ function applyChain() {
       overlayDivMirrored.style.backgroundImage = `url('${chainsSvgUrl}')`;
 
       renderer.appendChild(overlayDivMirrored);
+      */
 
       // Add click interceptor as defensive measure
       const clickHandler = (e) => {

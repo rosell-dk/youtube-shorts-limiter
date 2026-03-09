@@ -1,14 +1,18 @@
 /* YouTube Shorts Limiter - Content Script Styles */
 
+a[title="Shorts"] {
+  text-decoration: line-through; 
+}
+
 /* Shorts link styling */
 a.shorts-chained {
   position: relative;
-  opacity: 0.75;
+  color: white !important;
   cursor: not-allowed !important;
   pointer-events: none !important;
 }
 
-/* Chain overlay styling */
+/* Lock emoji overlay styling */
 .shorts-chain-overlay {
   position: absolute;
   top: 0;
@@ -18,13 +22,31 @@ a.shorts-chained {
   pointer-events: none;
   z-index: 9999;
   border-radius: inherit;
-  overflow: hidden;
-  background-size: 100% 100%;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+.lock-emoji {
+  position: absolute;
+  left: 11%;
+  bottom:5px;
+  font-size: 18px;
+  opacity: 1;
+}
+
+/* Commented out: Original chain SVG styling
+.shorts-chain-overlay {
+  background-size: 40% 80%;
+  background-repeat: no-repeat;
   background-position: center;
+  background-position-x: 40px;
+  filter: brightness(0) invert(1);
   opacity: 0.7;
 }
 
-/* Mirrored chain overlay (flipped on y-axis) */
 .shorts-chain-overlay-mirrored {
-  transform: scaleY(-1);
+  transform: scaleX(-1);
+  background-position-x: 70px;
 }
+*/
