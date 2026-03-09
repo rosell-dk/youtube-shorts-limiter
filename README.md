@@ -9,3 +9,9 @@ This is what it does:
 - Disables the Shorts link in the sidebar
 - Disables the doom-scrolling on the shorts page (no next-button, no way to scroll down for more shorts)
 
+
+## How to install
+
+1. Download this repo
+2. Follow the guide "Load an unpacked extension", available [here](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked). **Simply select the root folder of the plugin**
+
