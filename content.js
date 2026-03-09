@@ -17,16 +17,10 @@ function debounce(fn, delay) {
  * Handles both full sidebar (ytd-guide-entry-renderer) and mini sidebar (ytd-mini-guide-entry-renderer)
  */
 function applyChain() {
-  // Select both full and mini sidebar Shorts entries
-  const selectors = [
-    'ytd-guide-entry-renderer:has(a[href="/shorts"])',
-    'ytd-mini-guide-entry-renderer:has(a[href="/shorts"])'
-  ];
+  // Select the Shorts sidebar link (works for both full and mini sidebars)
+  const elements = document.querySelectorAll('a[title="Shorts"]');
 
-  selectors.forEach(selector => {
-    const elements = document.querySelectorAll(selector);
-
-    elements.forEach(renderer => {
+  elements.forEach(renderer => {
       // Skip if already processed
       if (renderer.classList.contains('shorts-chained')) {
         return;
@@ -59,7 +53,6 @@ function applyChain() {
         e.preventDefault();
       };
       renderer.addEventListener('click', clickHandler, true); // capture phase
-    });
   });
 }
 
