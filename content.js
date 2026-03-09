@@ -21,51 +21,38 @@ function applyChain() {
   const elements = document.querySelectorAll('a[title="Shorts"]');
 
   elements.forEach(renderer => {
-      // Skip if already processed
-      if (renderer.classList.contains('shorts-chained')) {
-        return;
-      }
+    // Skip if already processed
+    if (renderer.classList.contains('shorts-chained')) {
+      return;
+    }
 
-      // Mark as processed
-      renderer.classList.add('shorts-chained');
+    // Mark as processed
+    renderer.classList.add('shorts-chained');
 
-      // Remove any existing overlay (cleanup in case of re-injection)
-      const existingOverlay = renderer.querySelector('.shorts-chain-overlay');
-      if (existingOverlay) {
-        existingOverlay.remove();
-      }
+    // Remove any existing overlay (cleanup in case of re-injection)
+    const existingOverlay = renderer.querySelector('.shorts-chain-overlay');
+    if (existingOverlay) {
+      existingOverlay.remove();
+    }
 
-      // Create and inject the lock emoji overlay
-      const overlayDiv = document.createElement('div');
-      overlayDiv.className = 'shorts-chain-overlay';
+    // Create and inject the lock emoji overlay
+    const overlayDiv = document.createElement('div');
+    overlayDiv.className = 'shorts-chain-overlay';
 
-      // Add lock emoji
-      const lockEmoji = document.createElement('span');
-      lockEmoji.textContent = '🔒';
-      lockEmoji.className = 'lock-emoji';
+    // Add lock emoji
+    const lockEmoji = document.createElement('span');
+    lockEmoji.textContent = '🔒';
+    lockEmoji.className = 'lock-emoji';
 
-      overlayDiv.appendChild(lockEmoji);
-      renderer.appendChild(overlayDiv);
+    overlayDiv.appendChild(lockEmoji);
+    renderer.appendChild(overlayDiv);
 
-      /* Commented out: Original chain SVG approach
-      // Set chains.svg as stretched background
-      const chainsSvgUrl = chrome.runtime.getURL('chains.svg');
-      overlayDiv.style.backgroundImage = `url('${chainsSvgUrl}')`;
-
-      // Create and inject the mirrored chain overlay
-      const overlayDivMirrored = document.createElement('div');
-      overlayDivMirrored.className = 'shorts-chain-overlay shorts-chain-overlay-mirrored';
-      overlayDivMirrored.style.backgroundImage = `url('${chainsSvgUrl}')`;
-
-      renderer.appendChild(overlayDivMirrored);
-      */
-
-      // Add click interceptor as defensive measure
-      const clickHandler = (e) => {
-        e.stopImmediatePropagation();
-        e.preventDefault();
-      };
-      renderer.addEventListener('click', clickHandler, true); // capture phase
+    // Add click interceptor as defensive measure
+    const clickHandler = (e) => {
+      e.stopImmediatePropagation();
+      e.preventDefault();
+    };
+    renderer.addEventListener('click', clickHandler, true); // capture phase
   });
 }
 
