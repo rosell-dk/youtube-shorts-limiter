@@ -1,17 +1,11 @@
 /* YouTube Shorts Limiter - Content Script Styles */
 
-/* Apply to both full and mini sidebar Shorts entries */
-ytd-guide-entry-renderer.shorts-chained,
-ytd-mini-guide-entry-renderer.shorts-chained {
+/* Shorts link styling */
+a.shorts-chained {
   position: relative;
   opacity: 0.75;
   cursor: not-allowed !important;
-}
-
-/* Disable click interactions on the anchor */
-ytd-guide-entry-renderer.shorts-chained a,
-ytd-mini-guide-entry-renderer.shorts-chained a {
-  pointer-events: none;
+  pointer-events: none !important;
 }
 
 /* Chain overlay styling */
