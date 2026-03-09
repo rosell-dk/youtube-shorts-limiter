@@ -13,5 +13,10 @@ This is what it does:
 ## How to install
 
 1. Download this repo
-2. Follow the guide "Load an unpacked extension", available [here](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked). **Simply select the root folder of the plugin**
+2. Follow the guide "Load an unpacked extension", available [here](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked). **Simply select the root folder of the plugin (the folder containing manifest.json)**
+
+To install on Opera:
+1. Download
+2. Navigate to opera://extensions
+3. Click "Load unpacked" and select the folder of the plugin
 
