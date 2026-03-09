@@ -6,6 +6,6 @@ He still wanted to be allowed to click on a short from the homepage. But he did 
 
 This is what it does:
 
-- 1: Disables the Shorts link in the sidebar
-- 2: Disables the doom-scrolling on the shorts page (no next-button, no way to scroll down for more shorts)
+- Disables the Shorts link in the sidebar
+- Disables the doom-scrolling on the shorts page (no next-button, no way to scroll down for more shorts)
 
